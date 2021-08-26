@@ -1,7 +1,9 @@
 <script setup lang="ts">
 defineProps<{ modelValue?: string }>()
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits<{
+  (e: 'update:modelValue', id: string | number): void
+}>()
 
 function updateValue(e: Event) {
   const t = e.target as HTMLInputElement

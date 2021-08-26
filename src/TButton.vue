@@ -1,3 +1,7 @@
+<script lang="ts" setup>
+defineProps<{}>()
+</script>
+
 <template>
   <button class="t-button">
     <slot />

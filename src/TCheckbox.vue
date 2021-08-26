@@ -5,7 +5,9 @@ defineProps<{
   modelValue?: boolean
 }>()
 
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits<{
+  (e: 'update:modelValue', id: boolean): void
+}>()
 
 function updateValue(e: Event) {
   const t = e.target as HTMLInputElement

@@ -1,9 +1,6 @@
 <script setup lang="ts">
 defineProps({
   title: String,
-  color: {
-    default: '#ffffff',
-  },
 })
 </script>
 

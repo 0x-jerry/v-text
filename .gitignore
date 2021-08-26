@@ -6,3 +6,4 @@ dist-ssr
 
 components.d.ts
 vite-components-resolver.js
+src/*.vue.d.ts
