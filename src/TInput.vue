@@ -21,6 +21,7 @@ function updateValue(e: Event) {
   transition: border ease 0.4s;
   min-width: 200px;
   border: 1px solid var(--c-gray);
+  background: var(--c-white);
 
   &:focus {
     border-color: var(--c-primary-2);
@@ -33,6 +34,7 @@ function updateValue(e: Event) {
   &:disabled {
     cursor: not-allowed;
     border-color: var(--c-gray);
+    background: var(--c-bg);
   }
 }
 </style>

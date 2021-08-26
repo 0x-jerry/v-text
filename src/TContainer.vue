@@ -19,7 +19,7 @@ defineProps({
   margin: 15px;
   padding: 15px 10px;
   border: 1px solid var(--c-gray);
-  background: var(--c-gb);
+  background: var(--c-bg);
 
   &::before {
     content: attr(data-title);

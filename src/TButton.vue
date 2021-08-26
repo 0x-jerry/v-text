@@ -11,6 +11,7 @@
   transition: border ease 0.4s, background-color ease 0.4s;
 
   border: 1px solid var(--c-gray);
+  background: var(--c-white);
 
   &:focus {
     border-color: var(--c-primary-2);
@@ -30,6 +31,7 @@
   &:disabled {
     cursor: not-allowed;
     border-color: var(--c-gray);
+    background: var(--c-bg);
   }
 }
 </style>

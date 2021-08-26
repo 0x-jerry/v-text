@@ -10,7 +10,7 @@ const data = reactive({
 
   'c-white': '#ffffff',
 
-  'c-bg': '#ffffff',
+  'c-bg': '#f0f0f0',
 
   'c-gray-1': '#f5f5f5',
   'c-gray-2': '#d6d6d6',
@@ -39,6 +39,8 @@ const theme = computed(() => {
 .t-theme {
   font-size: 16px;
   line-height: 1.2em;
+  padding: 1px;
+  background: var(--c-bg);
 
   * {
     user-select: none;

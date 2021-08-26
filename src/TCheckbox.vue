@@ -31,6 +31,10 @@ function updateValue(e: Event) {
 
 <style lang="less">
 .t-checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
   &[disabled='true'] {
     cursor: not-allowed;
   }
@@ -75,11 +79,12 @@ function updateValue(e: Event) {
   }
 
   &--icon {
-    @size: 12px;
+    @size: 16px;
 
     display: inline-block;
     width: @size;
     height: @size;
+    margin-right: 5px;
     position: relative;
 
     &::before {
@@ -90,7 +95,7 @@ function updateValue(e: Event) {
       width: @size;
       height: @size;
       border: 1px solid var(--c-gray);
-      background: var(--c-bg);
+      background: var(--c-white);
       transform: translateY(-50%);
       transition: border ease 0.4s;
     }
@@ -99,9 +104,11 @@ function updateValue(e: Event) {
       content: '';
       position: absolute;
       top: 50%;
-      left: 0;
-      width: 2px;
-      height: 5px;
+      left: 10%;
+
+      width: 5px;
+      height: 10px;
+
       border: 2px solid var(--c-gray);
       border-color: transparent;
       transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
@@ -117,6 +124,7 @@ function updateValue(e: Event) {
   &[disabled='true']:hover {
     .t-checkbox--icon::before {
       border-color: var(--c-gray);
+      background: var(--c-bg);
     }
   }
 }
