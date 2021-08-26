@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: "14"
 
-      - run: yarn --frozen-lockfile
+      - run: yarn
       - run: yarn build:docs
 
       - name: deploy
