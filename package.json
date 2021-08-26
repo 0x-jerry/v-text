@@ -16,7 +16,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "files": [
-    "vite-components-resolver.ts",
+    "vite-components-resolver.js",
     "src"
   ],
   "devDependencies": {
