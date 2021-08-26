@@ -14,14 +14,12 @@ defineProps({
 </template>
 
 <style lang="less">
-@import url('./basic.less');
-
 .t-container {
   position: relative;
   margin: 15px;
   padding: 15px 10px;
-  border: 1px solid @color-border;
-  background: v-bind(color);
+  border: 1px solid var(--c-gray);
+  background: var(--c-gb);
 
   &::before {
     content: attr(data-title);
@@ -29,7 +27,7 @@ defineProps({
     top: 0;
     left: 0;
     transform: translate(10px, -50%);
-    background: v-bind(color);
+    background: var(--c-bg);
     padding: 0 2px;
   }
 }

@@ -15,26 +15,24 @@ function updateValue(e: Event) {
 </template>
 
 <style lang="less">
-@import url('./basic.less');
-
 .t-input {
   outline: none;
   padding: 2px;
   transition: border ease 0.4s;
   min-width: 200px;
-  border: 1px solid @color-border;
-
-  &:hover {
-    border: 1px solid lighten(@color-blue, 5%);
-  }
+  border: 1px solid var(--c-gray);
 
   &:focus {
-    border: 1px solid @color-blue;
+    border-color: var(--c-primary-2);
+  }
+
+  &:hover {
+    border-color: var(--c-primary);
   }
 
   &:disabled {
     cursor: not-allowed;
-    border: 1px solid @color-border;
+    border-color: var(--c-gray);
   }
 }
 </style>

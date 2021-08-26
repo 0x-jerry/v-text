@@ -30,8 +30,6 @@ function updateValue(e: Event) {
 </template>
 
 <style lang="less">
-@import url('./basic.less');
-
 .t-checkbox {
   &[disabled='true'] {
     cursor: not-allowed;
@@ -43,11 +41,12 @@ function updateValue(e: Event) {
     &:checked {
       + .t-checkbox--icon {
         &::before {
-          border-color: @color-blue;
+          border-color: var(--c-primary);
         }
 
         &::after {
-          border-color: transparent @color-blue @color-blue transparent;
+          border-color: transparent var(--c-primary) var(--c-primary)
+            transparent;
         }
       }
     }
@@ -55,21 +54,8 @@ function updateValue(e: Event) {
     &:disabled {
       + .t-checkbox--icon {
         &::before {
-          background: @color-bg-light;
-          border-color: @color-border;
-        }
-
-        &::after {
-          // border-color: transparent @color-border @color-border transparent;
-        }
-      }
-    }
-
-    &:disabled {
-      + .t-checkbox--icon {
-        &::before {
-          background: @color-bg-light;
-          border-color: @color-border;
+          background: var(--c-gray-1);
+          border-color: var(--c-gray);
         }
       }
     }
@@ -77,12 +63,12 @@ function updateValue(e: Event) {
     &:disabled:checked {
       + .t-checkbox--icon {
         &::before {
-          background: @color-bg-light;
-          border-color: @color-border;
+          background: var(--c-gray-1);
+          border-color: var(--c-gray);
         }
 
         &::after {
-          border-color: transparent @color-border @color-border transparent;
+          border-color: transparent var(--c-gray) var(--c-gray) transparent;
         }
       }
     }
@@ -103,8 +89,8 @@ function updateValue(e: Event) {
       left: 0;
       width: @size;
       height: @size;
-      border: 1px solid @color-border;
-      background: @color-white;
+      border: 1px solid var(--c-gray);
+      background: var(--c-bg);
       transform: translateY(-50%);
       transition: border ease 0.4s;
     }
@@ -116,7 +102,7 @@ function updateValue(e: Event) {
       left: 0;
       width: 2px;
       height: 5px;
-      border: 2px solid @color-border;
+      border: 2px solid var(--c-gray);
       border-color: transparent;
       transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
     }
@@ -124,13 +110,13 @@ function updateValue(e: Event) {
 
   &:hover {
     .t-checkbox--icon::before {
-      border-color: @color-blue;
+      border-color: var(--c-primary);
     }
   }
 
   &[disabled='true']:hover {
     .t-checkbox--icon::before {
-      border-color: @color-border;
+      border-color: var(--c-gray);
     }
   }
 }
