@@ -6,8 +6,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "build": "tsc vite-components-resolver.ts --skipLibCheck",
+    "build:docs": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview",
+    "release": "glib release"
   },
   "dependencies": {
     "vue": "^3.2.6"
@@ -17,9 +19,11 @@
   },
   "files": [
     "vite-components-resolver.js",
+    "vite-components-resolver.ts",
     "src"
   ],
   "devDependencies": {
+    "@exyz/glib": "^0.4.4",
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.0.5",
     "less": "^4.1.1",
