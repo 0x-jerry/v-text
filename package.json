@@ -9,6 +9,13 @@
   "dependencies": {
     "vue": "^3.2.6"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "vite-components-resolver.ts",
+    "src"
+  ],
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.6.0",
     "@vue/compiler-sfc": "^3.0.5",
