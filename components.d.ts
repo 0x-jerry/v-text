@@ -8,6 +8,7 @@ declare module 'vue' {
     TCheckbox: typeof import('./src/TCheckbox.vue')['default']
     TContainer: typeof import('./src/TContainer.vue')['default']
     TInput: typeof import('./src/TInput.vue')['default']
+    TTheme: typeof import('./src/TTheme.vue')['default']
   }
 }
 
