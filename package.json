@@ -8,8 +8,7 @@
     "dev": "vite",
     "build": "yarn build:resolver && yarn build:dts",
     "build:resolver": "tsc vite-components-resolver.ts --skipLibCheck",
-    "build:dts": "esno scripts/build-dts.ts",
-    "clean:dts": "rm -rf src/*.vue.d.ts",
+    "build:dts": "rimraf src/*.vue.d.ts && esno scripts/build-dts.ts",
     "build:docs": "vite build",
     "serve": "vite preview",
     "release": "glib release"
@@ -34,6 +33,7 @@
     "esno": "^0.9.1",
     "klaw-sync": "^6.0.0",
     "less": "^4.1.1",
+    "rimraf": "^3.0.2",
     "ts-morph": "^11.0.3",
     "typescript": "^4.3.5",
     "vite": "^2.5.1",
