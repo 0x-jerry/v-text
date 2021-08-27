@@ -1,4 +1,4 @@
-// Modify on: https://github.com/element-plus/element-plus/blob/7b79aae8ffd16ec14e0c5b375f3c2feca1b949f2/build/gen-dts.ts
+// Modified based on: https://github.com/element-plus/element-plus/blob/7b79aae8ffd16ec14e0c5b375f3c2feca1b949f2/build/gen-dts.ts
 import path from 'path'
 import fs from 'fs'
 import { Project } from 'ts-morph'
