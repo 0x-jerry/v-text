@@ -13,7 +13,7 @@ defineProps<{
 <style lang="less">
 .t-button {
   outline: none;
-  padding: 2px 15px;
+  padding: 0.2em 0.3em;
   transition: border ease 0.4s, background-color ease 0.4s;
 
   border: 1px solid var(--c-gray);
@@ -36,6 +36,7 @@ defineProps<{
 
   &:disabled {
     cursor: not-allowed;
+    color: var(--c-gray-4);
     border-color: var(--c-gray);
     background: var(--c-gray-1);
   }

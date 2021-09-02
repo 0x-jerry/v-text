@@ -35,6 +35,7 @@ function updateValue(e: Event) {
 
   &:disabled {
     cursor: not-allowed;
+    color: var(--c-gray-4);
     border-color: var(--c-gray);
     background: var(--c-gray-1);
   }
