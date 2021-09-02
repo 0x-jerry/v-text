@@ -1,28 +1,37 @@
 <script lang="ts" setup>
-import { computed, reactive } from 'vue'
+import { computed } from 'vue'
 
-const data = reactive({
-  'c-primary-1': '#ebf5ff',
-  'c-primary-2': '#add6ff',
-  'c-primary': '#5cb0ff',
-  'c-primary-4': '#339cff',
-  'c-primary-5': '#007ef5',
+interface ThemeProps {
+  primary?: number
+  backgroundColor?: string
+}
 
-  'c-white': '#ffffff',
-
-  'c-bg': '#f0f0f0',
-
-  'c-gray-1': '#f5f5f5',
-  'c-gray-2': '#d6d6d6',
-  'c-gray': '#adadad',
-  'c-gray-4': '#999999',
-  'c-gray-5': '#858585',
-})
+const props = defineProps<ThemeProps>()
 
 const theme = computed(() => {
-  const variables = Object.keys(data)
+  const primaryColor = props.primary ?? 210
 
-  return variables.map((key) => `--${key}: ${(data as any)[key]};`).join('')
+  const colors = {
+    'c-primary-1': `hsl(${primaryColor}deg, 100%, 95%)`,
+    'c-primary-2': `hsl(${primaryColor}deg, 100%, 85%)`,
+    'c-primary': `hsl(${primaryColor}deg, 100%, 70%)`,
+    'c-primary-4': `hsl(${primaryColor}deg, 100%, 60%)`,
+    'c-primary-5': `hsl(${primaryColor}deg, 100%, 50%)`,
+
+    'c-white': '#ffffff',
+
+    'c-bg': props.backgroundColor ?? 'hsl(0deg, 0%, 95%)',
+
+    'c-gray-1': `hsl(0deg, 0%, 95%)`,
+    'c-gray-2': `hsl(0deg, 0%, 85%)`,
+    'c-gray': `hsl(0deg, 0%, 70%)`,
+    'c-gray-4': `hsl(0deg, 0%, 60%)`,
+    'c-gray-5': `hsl(0deg, 0%, 50%)`,
+  }
+
+  const variables = Object.keys(colors)
+
+  return variables.map((key) => `--${key}: ${(colors as any)[key]};`).join('')
 })
 </script>
 

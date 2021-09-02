@@ -42,7 +42,9 @@ function updateValue(e: Event) {
   }
 
   &--input {
-    display: none;
+    display: block;
+    width: 0;
+    height: 0;
 
     &:checked {
       + .t-checkbox--icon {
@@ -75,6 +77,14 @@ function updateValue(e: Event) {
 
         &::after {
           border-color: transparent var(--c-gray) var(--c-gray) transparent;
+        }
+      }
+    }
+
+    &:focus {
+      + .t-checkbox--icon {
+        &::before {
+          border-color: var(--c-primary);
         }
       }
     }
@@ -112,6 +122,8 @@ function updateValue(e: Event) {
       height: 10px;
 
       border: 2px solid var(--c-gray);
+      transition: border ease 0.4s;
+
       border-color: transparent;
       transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
     }

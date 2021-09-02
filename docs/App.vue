@@ -1,15 +1,19 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { reactive, ref } from 'vue'
 
 const count = ref(0)
 
 const vinput = ref('hello')
 
 const checked = ref(false)
+
+const theme = reactive({
+  bgColor: '#ffffff',
+})
 </script>
 
 <template>
-  <TTheme>
+  <TTheme :primary="348" :backgroundColor="theme.bgColor">
     <TContainer title="Button">
       <TButton @click="count++"> hello: {{ count }} </TButton>
       <TButton @click="count++" disabled> hello: {{ count }} </TButton>
@@ -30,5 +34,10 @@ const checked = ref(false)
 <style>
 .t-container > * {
   margin-right: 5px;
+}
+
+html,
+body {
+  background-color: v-bind('theme.bgColor');
 }
 </style>
