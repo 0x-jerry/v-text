@@ -61,17 +61,27 @@ const theme = computed(() => {
     font-family: 'Fira Code', monospace;
   }
 
-  // .t-scroll::-webkit-scrollbar {
-  //   width: 2px;
-  // }
+  div::-webkit-scrollbar {
+    width: 12px;
+    background-color: transparent;
+  }
 
-  // .t-scroll::-webkit-scrollbar-thumb {
-  //   background-color: #bbbbbb;
-  //   border-radius: 1px;
-  // }
+  div::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    transition: color ease 0.4s;
+    background-clip: border-box;
+    border: 3px solid transparent;
 
-  // .t-scroll::-webkit-scrollbar-track {
-  //   background: none;
-  // }
+    background-color: var(--c-gray-2);
+    background-clip: content-box;
+
+    &:hover {
+      background-color: var(--c-gray);
+    }
+  }
+
+  div::-webkit-scrollbar-track {
+    background: none;
+  }
 }
 </style>

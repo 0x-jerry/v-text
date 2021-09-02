@@ -41,6 +41,15 @@ const theme = reactive({
       <TCheckbox disabled> world </TCheckbox>
       <TCheckbox disabled :checked="checked"> world </TCheckbox>
     </TContainer>
+
+    <TContainer title="Scrollbar">
+      <div style="height: 100px; overflow: auto">
+        <div style="height: 100px; background: hsl(120, 53%, 63%)"></div>
+        <div style="height: 100px; background: hsl(231, 53%, 63%)"></div>
+        <div style="height: 100px; background: hsl(120, 53%, 63%)"></div>
+        <div style="height: 100px; background: hsl(231, 53%, 63%)"></div>
+      </div>
+    </TContainer>
   </TTheme>
 </template>
 
