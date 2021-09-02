@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { reactive, ref } from 'vue'
+import TestC from './TestC.vue'
+import VirtualList from './VirtualList.vue'
 
 const count = ref(0)
 
@@ -13,6 +15,23 @@ const theme = reactive({
   textColor: '#000000',
   type: 'light',
 })
+
+const fakeList = reactive(
+  new Array(100).fill(0).map((_, idx) => ({
+    id: idx,
+    check: false,
+    items: new Array(100).fill(0).map((_, idx) => idx),
+  }))
+)
+
+function tryCheck(id: number) {
+  const hit = fakeList.find((f) => f.id === id)
+  if (!hit) {
+    return
+  }
+
+  hit.check = !hit.check
+}
 </script>
 
 <template>
@@ -42,14 +61,15 @@ const theme = reactive({
       <TCheckbox disabled :checked="checked"> world </TCheckbox>
     </TContainer>
 
-    <TContainer title="Scrollbar">
-      <div style="height: 100px; overflow: auto">
-        <div style="height: 100px; background: hsl(120, 53%, 63%)"></div>
-        <div style="height: 100px; background: hsl(231, 53%, 63%)"></div>
-        <div style="height: 100px; background: hsl(120, 53%, 63%)"></div>
-        <div style="height: 100px; background: hsl(231, 53%, 63%)"></div>
-      </div>
-    </TContainer>
+    <VirtualList :items="fakeList">
+      <template #content="{ data, onHeightChanged }">
+        <TestC
+          :data="data"
+          @check="tryCheck(data.id)"
+          @height-changed="onHeightChanged?.(data)"
+        ></TestC>
+      </template>
+    </VirtualList>
   </TTheme>
 </template>
 

@@ -1,4 +1,4 @@
-import { ComponentResolver } from 'vite-plugin-components'
+import { ComponentResolver } from 'unplugin-vue-components/types'
 
 /**
  * Resolver for V-Text
