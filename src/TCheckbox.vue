@@ -138,7 +138,6 @@ function updateValue(e: Event) {
   &[disabled='true']:hover {
     .t-checkbox--icon::before {
       border-color: var(--c-gray);
-      background: var(--c-bg);
     }
   }
 }
