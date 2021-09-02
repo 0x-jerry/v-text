@@ -91,12 +91,12 @@ function updateValue(e: Event) {
   }
 
   &--icon {
-    @size: 16px;
+    @size: var(--t-size);
 
     display: inline-block;
     width: @size;
     height: @size;
-    margin-right: 5px;
+    margin-right: 0.5em;
     position: relative;
 
     &::before {
@@ -113,19 +113,22 @@ function updateValue(e: Event) {
     }
 
     &::after {
+      @w: calc(var(--t-size) * 4 / 15);
+      @h: calc(var(--t-size) * 11 / 15);
+
       content: '';
       position: absolute;
       top: 50%;
       left: 10%;
 
-      width: 5px;
-      height: 10px;
+      width: @w;
+      height: @h;
 
       border: 2px solid var(--c-gray);
       transition: border ease 0.4s;
 
       border-color: transparent;
-      transform: translate(4px, calc(-50% - 1px)) rotate(45deg);
+      transform: translate(@w, calc(-50% - 1px)) rotate(45deg);
     }
   }
 

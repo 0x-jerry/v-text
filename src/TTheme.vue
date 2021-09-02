@@ -4,6 +4,8 @@ import { computed } from 'vue'
 interface ThemeProps {
   primary?: number
   backgroundColor?: string
+  textColor?: string
+  size?: number
 }
 
 const props = defineProps<ThemeProps>()
@@ -12,6 +14,8 @@ const theme = computed(() => {
   const primaryColor = props.primary ?? 210
 
   const colors = {
+    't-size': (props.size ?? 14) + 'px',
+    'c-text': props.textColor ?? '#000000',
     'c-primary-1': `hsl(${primaryColor}deg, 100%, 95%)`,
     'c-primary-2': `hsl(${primaryColor}deg, 100%, 85%)`,
     'c-primary': `hsl(${primaryColor}deg, 100%, 70%)`,
@@ -46,9 +50,10 @@ const theme = computed(() => {
 @import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css);
 
 .t-theme {
-  font-size: 16px;
+  font-size: var(--t-size);
   line-height: 1.2em;
   padding: 1px;
+  color: var(--c-text);
   background: var(--c-bg);
 
   * {
